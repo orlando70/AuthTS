@@ -1,0 +1,55 @@
+{
+   "name": "authts",
+   "version": "1.0.0",
+   "description": "",
+   "main": "build/server.js",
+   "directories": {
+      "test": "test"
+   },
+   "scripts": {
+      "dev": "cross-env APP_ENV=local nodemon ./src/server.ts",
+      "build": "rimraf ./build && tsc",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "typeorm": "ts-node ./node_modules/typeorm/cli.js -d src/data-source.ts",
+      "typeorm:generate": "npm run typeorm migration:generate ./src/database/migrations/migrationname.ts",
+      "migrate": "npm run typeorm migration:run",
+      "create": "npm run typeorm migration:create ./src/database/migrations/migrationname",
+      "revert:migration": "npm run typeorm migration:revert"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "@types/dotenv": "^8.2.0",
+      "cors": "^2.8.5",
+      "cross-env": "^7.0.3",
+      "dotenv": "^16.0.0",
+      "express": "^4.18.0",
+      "helmet": "^5.0.2",
+      "http": "^0.0.1-security",
+      "ioredis": "^5.0.4",
+      "morgan": "^1.10.0",
+      "mysql2": "^2.3.3",
+      "reflect-metadata": "^0.1.13",
+      "stoppable": "^1.1.0",
+      "typeorm": "^0.3.0",
+      "webpack": "^5.72.0"
+   },
+   "devDependencies": {
+      "@types/cors": "^2.8.12",
+      "@types/express": "^4.17.13",
+      "@types/helmet": "^4.0.0",
+      "@types/ioredis": "^4.28.10",
+      "@types/morgan": "^1.9.3",
+      "@types/node": "^16.11.10",
+      "@types/stoppable": "^1.1.1",
+      "eslint-config-airbnb-typescript": "^17.0.0",
+      "eslint-import-resolver-typescript": "^2.7.1",
+      "eslint-plugin-import": "^2.26.0",
+      "express-async-errors": "^3.1.1",
+      "nodemon": "^2.0.16",
+      "rimraf": "^3.0.2",
+      "ts-node": "10.7.0",
+      "typescript": "^4.6.4"
+   }
+}
