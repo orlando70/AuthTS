@@ -19,7 +19,7 @@ const connectRedis = async () => {
 export default async () => {
     await connectRedis();
     await connectDB()
-
+    
     const app = (await import('./app')).default;
 
 }

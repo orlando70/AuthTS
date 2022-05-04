@@ -12,8 +12,8 @@ export const AppDataSource = new DataSource({
     dropSchema: config.app.env === AppEnvironmentEnum.TEST,
     migrationsRun: config.app.env !== AppEnvironmentEnum.TEST,
     logging: false,
-    entities: [`${__dirname}/src/database/entity/*.ts`, `${__dirname}/src/database/entity/*.js`],
-    migrations: [`${__dirname}/src/database/migrations/*.ts`, `${__dirname}/src/database/migrations/*.js`],
+    entities: ["src/database/entity/*{.js,.ts}"],
+    migrations: ["src/database/migrations/*{.js,.ts}"],
     subscribers: [],
     timezone: 'Z'
 })
