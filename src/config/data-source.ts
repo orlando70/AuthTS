@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import config, { AppEnvironmentEnum } from './config'
+import config, { AppEnvironmentEnum } from '.'
 
 export const AppDataSource = new DataSource({
     type: "mysql",

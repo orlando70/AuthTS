@@ -3,7 +3,7 @@ import initialize from './initialize';
 import http from 'http';
 import stoppable from 'stoppable';
 import { MigrationExecutor } from 'typeorm'
-import {AppDataSource} from './data-source'
+import {AppDataSource} from './config/data-source'
 
 const runMigrations = async () => {
     const executor = new MigrationExecutor(AppDataSource, AppDataSource.createQueryRunner());

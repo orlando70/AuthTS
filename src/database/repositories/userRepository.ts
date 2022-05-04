@@ -1,5 +1,5 @@
 import { getRepositoryWithQueryRunner } from '.';
-import {User} from '../entity/User';
+import User from '../entity/User';
 
 
 export default class UserRepo {
@@ -13,5 +13,11 @@ export default class UserRepo {
 
     public static createUser = async (user: Partial<User>) => {
         return (await UserRepo.getRepository()).save(user)
+    }
+
+    public static getUserById = async(id: string) => {
+        return ((await UserRepo.getRepository()).findOne({
+            where: {id}
+        }))
     }
 }
