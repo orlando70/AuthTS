@@ -23,6 +23,7 @@ type Config = {
         domain: string,
         logo: string,
         name: string,
+        saltRounds: number;
     },
     db: {
         host: string,
@@ -62,6 +63,7 @@ const config: Config = {
         domain: process.env.APP_DOMAIN!,
         logo: process.env.APP_LOGO!,
         name: process.env.APP_NAME!,
+        saltRounds: +process.env.SALT_ROUNDS!
     },
     db: {
         host: process.env.DB_HOST || 'localhost',

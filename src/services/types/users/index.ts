@@ -1,6 +1,6 @@
 import {IsString, IsNotEmpty, MaxLength, MinLength} from 'class-validator';
 
-export class UserValidation{
+export class CreateUserRequest{
     @IsString()
     @IsNotEmpty()
     firstName: string
@@ -18,4 +18,8 @@ export class UserValidation{
         message: "username must not be more than 20 characters"
     })
     username: string;
+}
+
+export class GetUserValidation{
+    req: Express.Request;
 }

@@ -21,5 +21,6 @@ export default async () => {
     await connectDB()
     
     const app = (await import('./app')).default;
-
+    const router = (await import('./router')).default;
+    app.use(router);
 }

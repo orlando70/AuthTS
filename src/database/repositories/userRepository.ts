@@ -20,4 +20,10 @@ export default class UserRepo {
             where: {id}
         }))
     }
+
+    public static getUserByUsername = async(username: string) => {
+        return ((await UserRepo.getRepository()).findOne({
+            where: {username}
+        }))
+    }
 }
