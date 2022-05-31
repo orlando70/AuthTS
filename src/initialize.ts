@@ -1,5 +1,7 @@
 import 'express-async-errors'
 import connectDB from './database/setup'
+import errorHandler from './middleware/application/errorHandler';
+import notFoundHandler from './middleware/application/notFoundHandler';
 
 const connectRedis = async () => {
     const redis = (await import('./database/redis')).default;
@@ -23,4 +25,6 @@ export default async () => {
     const app = (await import('./app')).default;
     const router = (await import('./router')).default;
     app.use(router);
+    app.use(notFoundHandler);
+    app.use(errorHandler);
 }

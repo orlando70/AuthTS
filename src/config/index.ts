@@ -23,7 +23,9 @@ type Config = {
         domain: string,
         logo: string,
         name: string,
-        saltRounds: number;
+        saltRounds: number,
+        email: string,
+        passwordResetTTL:number
     },
     db: {
         host: string,
@@ -39,13 +41,13 @@ type Config = {
         password: string,
     },
     sendgrid: {
-        api_key: string,
+        apiKey: string,
     },
     twilio: {
         service_id: string,
         auth_token: string,
         account_sid: string,
-    }
+    },
 }
 
 const isTestEnviroment = process.env.APP_ENV === AppEnvironmentEnum.TEST;
@@ -63,7 +65,9 @@ const config: Config = {
         domain: process.env.APP_DOMAIN!,
         logo: process.env.APP_LOGO!,
         name: process.env.APP_NAME!,
-        saltRounds: +process.env.SALT_ROUNDS!
+        saltRounds: +process.env.SALT_ROUNDS!,
+        email: process.env.APP_EMAIL!,
+        passwordResetTTL: +process.env.APP_PASSWORD_RESET_TTL!,
     },
     db: {
         host: process.env.DB_HOST || 'localhost',
@@ -79,13 +83,13 @@ const config: Config = {
         password: process.env.REDIS_PASSWORD!,
     },
     sendgrid: {
-        api_key: process.env.SENDGRID_API_KEY!,
+        apiKey: process.env.SENDGRID_API_KEY!,
     },
     twilio: {
         service_id: process.env.TWILIO_SERVICE_ID!,
         auth_token: process.env.TWILIO_AUTH_TOKEN!,
         account_sid: process.env.TWILIO_ACCOUNT_SID!,
-    }
+    },
 }
 
 const validateConfiguration = () => {

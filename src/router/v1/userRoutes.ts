@@ -1,8 +1,9 @@
 import express from 'express';
-import userController from '../../controller/userController';
+import UserController from '../../controller/UserController';
+import isAuthenticatedUser from '../../middleware/auth/isAuthenticatedUser';
+
 const router = express.Router();
 
-router.get('/all', userController.Users);
-router.post('/register', userController.register)
+router.get('/:id', isAuthenticatedUser('AUTH'), UserController.User);
 
 export default router;

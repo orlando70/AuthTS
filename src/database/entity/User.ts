@@ -3,6 +3,8 @@ import { GenericEntity } from "../generic"
 
 @Entity()
 export default class User extends GenericEntity{
+    // You can add other sensitive information inside the array
+    static sensitiveFields = ['password'] as (keyof User)[]; 
     @Column()
     firstName!: string;
 
@@ -10,5 +12,11 @@ export default class User extends GenericEntity{
     lastName!: string;
 
     @Column()
-    username!: string;
+    email!: string;
+
+    @Column()
+    password!: string;
+
+    @Column({type: "boolean", default: false})
+    isEmailVerified!: boolean;
 }
