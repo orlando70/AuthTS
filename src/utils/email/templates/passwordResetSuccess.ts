@@ -1,5 +1,5 @@
 function passwordResetSuccess (name: string) {
-    return `
+  return `
      <!doctype html>
      <html>
         <head>
@@ -11,7 +11,7 @@ function passwordResetSuccess (name: string) {
             <p> Your password has been reset successfully.</p>
         </body>
     </html>
-     `;
+     `
 };
 
-export { passwordResetSuccess};
+export { passwordResetSuccess }

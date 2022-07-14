@@ -1,9 +1,9 @@
-import express from 'express';
-import UserController from '../../controller/UserController';
-import isAuthenticatedUser from '../../middleware/auth/isAuthenticatedUser';
+import express from 'express'
+import UserController from '../../controller/UserController'
+import isAuthenticatedUser from '../../middleware/auth/isAuthenticatedUser'
 
-const router = express.Router();
+const router = express.Router()
 
-router.get('/:id', isAuthenticatedUser('AUTH'), UserController.User);
+router.get('/:id', isAuthenticatedUser('AUTH'), UserController.User)
 
-export default router;
+export default router

@@ -1,5 +1,5 @@
-function resetPassword(baseUrl: string, token: string, name: string) {
-    return `
+function resetPassword (baseUrl: string, token: string, name: string) {
+  return `
      <!doctype html>
      <html>
         <head>
@@ -13,7 +13,7 @@ function resetPassword(baseUrl: string, token: string, name: string) {
             <a href="${baseUrl}/v1/auth/reset/${token}">Reset Password</a>
         </body>
     </html>
-     `;
+     `
 };
 
-export { resetPassword };
+export { resetPassword }

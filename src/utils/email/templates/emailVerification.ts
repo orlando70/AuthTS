@@ -1,5 +1,5 @@
 function emailVerification (baseUrl: string, token: string, name: string) {
-    return `
+  return `
      <!doctype html>
      <html>
       <head>
@@ -13,7 +13,7 @@ function emailVerification (baseUrl: string, token: string, name: string) {
           <a href="${baseUrl}/v1/auth/verify/${token}">Verify Email</a>
       </body>
     </html>
-     `;
+     `
 };
 
-export { emailVerification};
+export { emailVerification }

@@ -1,22 +1,22 @@
-import { Entity, Column } from "typeorm"
-import { GenericEntity } from "../generic"
+import { Entity, Column } from 'typeorm'
+import { GenericEntity } from '../generic'
 
 @Entity()
-export default class User extends GenericEntity{
-    // You can add other sensitive information inside the array
-    static sensitiveFields = ['password'] as (keyof User)[]; 
+export default class User extends GenericEntity {
+  // You can add other sensitive information inside the array
+  static sensitiveFields = ['password'] as (keyof User)[]
     @Column()
-    firstName!: string;
+      firstName!: string
 
     @Column()
-    lastName!: string;
+      lastName!: string
 
     @Column()
-    email!: string;
+      email!: string
 
     @Column()
-    password!: string;
+      password!: string
 
-    @Column({type: "boolean", default: false})
-    isEmailVerified!: boolean;
+    @Column({ type: 'boolean', default: false })
+      isEmailVerified!: boolean
 }

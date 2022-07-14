@@ -1,13 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity()
 export class GenericEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+      id: string
 
     @CreateDateColumn()
-    createdAt: Date;
+      createdAt: Date
 
     @UpdateDateColumn()
-    updatedAt: Date;
+      updatedAt: Date
 }
