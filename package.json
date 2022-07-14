@@ -13,7 +13,8 @@
       "typeorm": "ts-node ./node_modules/typeorm/cli.js -d src/config/data-source.ts",
       "generate:migration": "npm run typeorm migration:generate -n src/database/migrations/migration",
       "migrate": "npm run typeorm migration:run",
-      "revert:migration": "npm run typeorm migration:revert"
+      "revert:migration": "npm run typeorm migration:revert",
+      "lint": "eslint"
    },
    "keywords": [],
    "author": "",
