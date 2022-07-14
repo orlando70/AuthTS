@@ -13,8 +13,7 @@
       "typeorm": "ts-node ./node_modules/typeorm/cli.js -d src/config/data-source.ts",
       "generate:migration": "npm run typeorm migration:generate -n src/database/migrations/migration",
       "migrate": "npm run typeorm migration:run",
-      "revert:migration": "npm run typeorm migration:revert",
-      "lint": "eslint \"/**/*.{js,jsx}\""
+      "revert:migration": "npm run typeorm migration:revert"
    },
    "keywords": [],
    "author": "",
@@ -66,7 +65,6 @@
       "@types/supertest": "^2.0.12",
       "@typescript-eslint/eslint-plugin": "^5.30.6",
       "@typescript-eslint/parser": "^5.30.6",
-      "eslint": "^8.19.0",
       "eslint-config-airbnb-typescript": "^17.0.0",
       "eslint-config-standard": "^17.0.0",
       "eslint-import-resolver-typescript": "^2.7.1",
