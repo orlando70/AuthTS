@@ -15,5 +15,12 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src']
+      }
+    }
   }
 }
